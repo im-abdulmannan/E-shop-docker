@@ -78,7 +78,7 @@ const UserOrderDetails = () => {
     if (isAuthenticated) {
       const groupTitle = data._id + user._id;
       const userId = user._id;
-      const sellerId = data.shop._id;
+      const sellerId = data.cart[0].shopId;
 
       await axios
         .post(`${server}/conversation/create-new-conversation`, {
@@ -96,6 +96,7 @@ const UserOrderDetails = () => {
       toast.error("Please login to access this resource");
     }
   };
+
 
   return (
     <div className={`py-4 min-h-screen ${styles.section}`}>

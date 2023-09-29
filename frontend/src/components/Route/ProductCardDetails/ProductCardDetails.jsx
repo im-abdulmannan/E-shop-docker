@@ -94,6 +94,8 @@ const ProductCardDetails = ({ setOpen, data }) => {
     dispatch(addToWishlist(data));
   };
 
+  console.log(data);
+
   return (
     <div className="bg-[#fff]">
       {data ? (
@@ -119,7 +121,9 @@ const ProductCardDetails = ({ setOpen, data }) => {
                   />
                   <div>
                     <h3 className={`${styles.shop_name}`}>{data.shop.name}</h3>
-                    <h5 className="pb-3 text-[15px]">(4/5) Ratings</h5>
+                    <h5 className="pb-3 text-[15px]">
+                      ({data.ratings}/5) Ratings
+                    </h5>
                   </div>
                 </div>
 

@@ -35,7 +35,6 @@ const ShopAllCoupons = () => {
       .then((res) => {
         setIsLoading(false);
         setCoupons(res.data.couponCodes);
-        console.log(res.data.couponCodes)
       })
       .catch((error) => {
         setIsLoading(false);
@@ -60,7 +59,7 @@ const ShopAllCoupons = () => {
           minAmount,
           maxAmount,
           selectedProducts,
-          shop: seller._id,
+          shopId: seller._id,
         },
         {
           withCredentials: true,
@@ -100,17 +99,16 @@ const ShopAllCoupons = () => {
   ];
 
   const rows = [];
-  {
-    coupons &&
-      coupons.forEach((item) => {
-        rows.push({
-          id: item._id,
-          name: item.name,
-          discount: item.value + "%",
-          sold: 10,
-        });
+
+  coupons &&
+    coupons.forEach((item) => {
+      rows.push({
+        id: item._id,
+        name: item.name,
+        discount: item.value + "%",
+        sold: 10,
       });
-  }
+    });
 
   return (
     <>

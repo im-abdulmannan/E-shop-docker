@@ -229,7 +229,7 @@ export const categoriesData = [
     title: "Gifts",
     subTitle: "",
     image_Url:
-      "https://securecdn.pymnts.com/wp-content/uploads/2014/11/Gifts-Photo-700x489.jpg",
+      "https://static.vecteezy.com/system/resources/previews/005/439/408/non_2x/design-red-gift-box-icon-with-yellow-ribbon-free-vector.jpg",
   },
   {
     id: 7,

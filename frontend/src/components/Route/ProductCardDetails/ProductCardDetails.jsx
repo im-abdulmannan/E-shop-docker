@@ -15,7 +15,7 @@ import {
   addToWishlist,
   removeFromWishlist,
 } from "../../../redux/actions/wishlistAction";
-import { backend_url, server } from "../../../server";
+import { server } from "../../../server";
 import styles from "../../../styles/styles";
 
 const ProductCardDetails = ({ setOpen, data }) => {
@@ -109,13 +109,10 @@ const ProductCardDetails = ({ setOpen, data }) => {
 
             <div className="block w-full 800px:flex">
               <div className="w-full 800px:w-[50%]">
-                <img
-                  src={`${backend_url}${data.images && data?.images[0]}`}
-                  alt=""
-                />
+                <img src={data.images && data?.images[0]} alt="" />
                 <div className="flex">
                   <img
-                    src={`${backend_url}${data.shop.avatar}`}
+                    src={data.shop.avatar}
                     alt=""
                     className="w-[50px] h-[50px] mt-5 rounded-full mr-2"
                   />

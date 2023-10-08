@@ -31,7 +31,7 @@ router.post("/create-user", upload.single("file"), async (req, res, next) => {
     }
 
     const filename = req.file.filename;
-    const fileUrl = path.join(filename);
+    const fileUrl = req.file.location;
 
     const user = {
       name: name,
@@ -216,10 +216,10 @@ router.put(
   upload.single("image"),
   catchAsyncError(async (req, res, next) => {
     try {
-      const existsUser = await User.findById(req.user.id);
-      const existsAvatarPath = `uploads/${existsUser.avatar}`;
-      fs.unlinkSync(existsAvatarPath);
-      const fileUrl = path.join(req.file.filename);
+      // const existsUser = await User.findById(req.user.id);
+      // const existsAvatarPath = `uploads/${existsUser.avatar}`;
+      // fs.unlinkSync(existsAvatarPath);
+      const fileUrl = req.file.location;
 
       const user = await User.findByIdAndUpdate(req.user.id, {
         avatar: fileUrl,

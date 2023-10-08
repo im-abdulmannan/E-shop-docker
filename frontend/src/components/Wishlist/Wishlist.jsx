@@ -6,7 +6,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { addToCart } from "../../redux/actions/cartAction";
 import { removeFromWishlist } from "../../redux/actions/wishlistAction";
-import { backend_url } from "../../server";
 import styles from "../../styles/styles";
 
 const Wishlist = ({ setOpenWishlist }) => {
@@ -91,7 +90,7 @@ const SingleWishlist = ({ data, removeFromWishlistHandler, addToCartHandler }) =
         />
 
         <img
-          src={`${backend_url}${data.images[0]}`}
+          src={data.images[0]}
           alt=""
           className="w-[50px] h-[50px] object-cover ml-2 mr-2 rounded-full"
         />

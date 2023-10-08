@@ -1,6 +1,7 @@
 const express = require("express");
 const Order = require("../model/orderModel");
 const Product = require("../model/productModel");
+const Event = require("../model/eventModel");
 const router = express.Router();
 const catchAsyncError = require("../middleware/catchAsyncError");
 const ErrorHandler = require("../utils/ErrorHandler");
@@ -117,7 +118,8 @@ router.put(
       });
 
       async function updateProduct(id, qty) {
-        const product = await Product.findById(id);
+        const product =
+          (await Product.findById(id)) || (await Event.findById(id));
 
         product.stock -= qty;
         product.sold_out += qty;

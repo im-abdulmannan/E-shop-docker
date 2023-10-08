@@ -21,7 +21,7 @@ import {
   updateUserAddress,
   updateUserInfo,
 } from "../../redux/actions/userAction";
-import { backend_url, server } from "../../server";
+import { server } from "../../server";
 import styles from "../../styles/styles";
 
 const ProfileContent = ({ active }) => {
@@ -32,7 +32,7 @@ const ProfileContent = ({ active }) => {
   const [email, setEmail] = useState(user && user.email);
   const [phoneNumber, setPhoneNumber] = useState(user && user.phoneNumber);
   const [password, setPassword] = useState("");
-  const [avatar, setAvatar] = useState(null);
+  const [avatar, setAvatar] = useState("");
 
   useEffect(() => {
     toast.error(error);
@@ -74,7 +74,7 @@ const ProfileContent = ({ active }) => {
           <div className="flex justify-center w-full">
             <div className="relative">
               <img
-                src={`${backend_url}${user?.avatar}`}
+                src={user?.avatar}
                 className="w-[150px] h-[150px] rounded-full object-cover border-[3px] border-[#3ad132]"
                 alt=""
               />
@@ -83,7 +83,6 @@ const ProfileContent = ({ active }) => {
                   type="file"
                   id="image"
                   className="hidden"
-                  value={avatar}
                   onChange={handleImage}
                 />
                 <label htmlFor="image">

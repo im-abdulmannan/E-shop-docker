@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import socketIO from "socket.io-client";
 import { format } from "timeago.js";
 import Header from "../components/Layout/Header";
-import { backend_url, server } from "../server";
+import { server } from "../server";
 import styles from "../styles/styles";
 const ENDPOINT = "http://localhost:5000/";
 const socketId = socketIO(ENDPOINT, { transports: ["websocket"] });
@@ -289,7 +289,7 @@ const MessageList = ({
     >
       <div className="relative">
         <img
-          src={`${backend_url}/${user?.avatar}`}
+          src={user?.avatar}
           alt=""
           className="w-[50px] h-[50px] rounded-full"
         />
@@ -330,7 +330,7 @@ const SellerInbox = ({
       <div className="w-full flex p-3 items-center justify-between bg-slate-200">
         <div className="flex">
           <img
-            src={`${backend_url}/${userData?.avatar}`}
+            src={userData?.avatar}
             alt=""
             className="w-[60px] h-[60px] rounded-full"
           />
@@ -358,7 +358,7 @@ const SellerInbox = ({
             >
               {item.sender !== sellerId && (
                 <img
-                  src={`${backend_url}/${userData?.avatar}`}
+                  src={userData?.avatar}
                   className="w-[40px] h-[40px] rounded-full mr-3"
                   alt=""
                 />
@@ -366,7 +366,7 @@ const SellerInbox = ({
               <div className="flex flex-col">
                 {item.images && (
                   <img
-                    src={`${backend_url}/${item.images}`}
+                    src={item.images}
                     className="w-[300px] h-[300px] object-cover rounded-[10px] ml-2 mb-2"
                   />
                 )}

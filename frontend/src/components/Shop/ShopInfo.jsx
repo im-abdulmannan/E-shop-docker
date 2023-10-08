@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import { getAllShopProducts } from "../../redux/actions/productAction";
-import { backend_url, server } from "../../server";
+import { server } from "../../server";
 import styles from "../../styles/styles";
 import Loader from "../Layout/Loader";
 
@@ -61,7 +61,7 @@ const ShopInfo = ({ isOwner }) => {
           <div className="w-full py-5">
             <div className="w-full flex items-center justify-center">
               <img
-                src={`${backend_url}${data?.avatar}`}
+                src={data?.avatar}
                 alt=""
                 className="w-[150px] h-[150px] object-cover rounded-full"
               />

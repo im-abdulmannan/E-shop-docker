@@ -30,7 +30,7 @@ router.post("/create-shop", upload.single("file"), async (req, res, next) => {
     }
 
     const filename = req.file.filename;
-    const fileUrl = path.join(filename);
+    const fileUrl = req.file.location;
 
     const seller = {
       name: req.body.name,
@@ -235,10 +235,10 @@ router.put(
   upload.single("image"),
   catchAsyncError(async (req, res, next) => {
     try {
-      const existsShop = await Shop.findById(req.seller._id);
-      const existsAvatarPath = `uploads/${existsShop.avatar}`;
-      fs.unlinkSync(existsAvatarPath);
-      const fileUrl = path.join(req.file.filename);
+      // const existsShop = await Shop.findById(req.seller._id);
+      // const existsAvatarPath = `uploads/${existsShop.avatar}`;
+      // fs.unlinkSync(existsAvatarPath);
+      const fileUrl = req.file.location;
 
       const seller = await Shop.findByIdAndUpdate(req.seller._id, {
         avatar: fileUrl,

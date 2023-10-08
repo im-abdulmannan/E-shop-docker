@@ -4,7 +4,7 @@ import { AiOutlineCamera } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { loadSeller } from "../../redux/actions/userAction";
-import { backend_url, server } from "../../server";
+import { server } from "../../server";
 import styles from "../../styles/styles";
 
 const ShopSettings = () => {
@@ -77,7 +77,7 @@ const ShopSettings = () => {
               src={
                 avatar
                   ? URL.createObjectURL(avatar)
-                  : `${backend_url}${seller.avatar}`
+                  : `${seller.avatar}`
               }
               alt=""
               className="w-[200px] h-[200px] rounded-full border border-[#6ed645]"

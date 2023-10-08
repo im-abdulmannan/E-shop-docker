@@ -111,22 +111,6 @@ const CreateEvent = () => {
         </div>
         <br />
 
-        {/* <div>
-          <label htmlFor="description" className="pb-2">
-            Description <span className="text-red-500">*</span>
-          </label>
-          <textarea
-            cols={"30"}
-            rows={"8"}
-            type="text"
-            name="description"
-            id="description"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            className={`${styles.input} mt-2`}
-            placeholder="Enter your event product description..."
-          />
-        </div> */}
         <div>
           <label
             htmlFor="description"

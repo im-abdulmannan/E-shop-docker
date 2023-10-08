@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import { getShopOrders } from "../../redux/actions/orderAction";
-import { backend_url, server } from "../../server";
+import { server } from "../../server";
 import styles from "../../styles/styles";
 
 const ShopOrderDetails = () => {
@@ -95,7 +95,7 @@ const ShopOrderDetails = () => {
         data?.cart.map((item, index) => (
           <div className="w-full flex items-start mb-5">
             <img
-              src={`${backend_url}/${item.images[0]}`}
+              src={item.images[0]}
               alt=""
               className="w-[80px] h-[80px]"
             />

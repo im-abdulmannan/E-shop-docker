@@ -4,7 +4,6 @@ import { Link, useParams } from "react-router-dom";
 import { format } from "timeago.js";
 import { getAllShopEvents } from "../../redux/actions/eventAction";
 import { getAllShopProducts } from "../../redux/actions/productAction";
-import { backend_url } from "../../server";
 import styles from "../../styles/styles";
 import Ratings from "../Products/Ratings";
 import ProductCard from "../Route/ProductCard/ProductCard";
@@ -102,7 +101,7 @@ const ShopProfileData = ({ isOwner }) => {
             allReviews.map((item, index) => (
               <div key={item} className="w-full flex my-4">
                 <img
-                  src={`${backend_url}/${item.user.avatar}`}
+                  src={item.user.avatar}
                   className="w-[50px] h-[50px] rounded-full"
                   alt=""
                 />

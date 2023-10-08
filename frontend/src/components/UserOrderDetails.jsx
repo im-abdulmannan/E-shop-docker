@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import { getUserOrders } from "../redux/actions/orderAction";
-import { backend_url, server } from "../server";
+import { server } from "../server";
 import styles from "../styles/styles";
 
 const UserOrderDetails = () => {
@@ -97,7 +97,6 @@ const UserOrderDetails = () => {
     }
   };
 
-
   return (
     <div className={`py-4 min-h-screen ${styles.section}`}>
       <div className="w-full items-center flex justify-between">
@@ -123,11 +122,7 @@ const UserOrderDetails = () => {
       {data &&
         data?.cart.map((item, index) => (
           <div className="w-full flex items-start mb-5">
-            <img
-              src={`${backend_url}/${item.images[0]}`}
-              alt=""
-              className="w-[80px] h-[80px]"
-            />
+            <img src={item.images[0]} alt="" className="w-[80px] h-[80px]" />
             <div className="w-full">
               <h5 className="pl-3 text-[20px]">{item.name}</h5>
               <h5 className="pl-3 text-[20px] text-[#00000091]">
@@ -164,7 +159,7 @@ const UserOrderDetails = () => {
             <br />
             <div className="w-full flex">
               <img
-                src={`${backend_url}/${selectedItem?.images[0]}`}
+                src={selectedItem?.images[0]}
                 alt=""
                 className="w-[80px] h-[80px]"
               />

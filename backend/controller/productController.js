@@ -21,7 +21,7 @@ router.post(
         return next(new ErrorHandler("Shop id is not valid", 400));
       } else {
         const files = req.files;
-        const imageUrls = files.map((file) => `${file.filename}`);
+        const imageUrls = files.map((file) => file.location);
         const productData = req.body;
         productData.images = imageUrls;
         productData.shop = shop;

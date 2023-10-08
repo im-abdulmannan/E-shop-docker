@@ -13,7 +13,6 @@ import {
   addToWishlist,
   removeFromWishlist,
 } from "../../../redux/actions/wishlistAction";
-import { backend_url } from "../../../server";
 import styles from "../../../styles/styles";
 import Ratings from "../../Products/Ratings";
 import ProductCardDetails from "../ProductCardDetails/ProductCardDetails";
@@ -71,7 +70,7 @@ const ProductCard = ({ data, isEvent }) => {
           }`}
         >
           <img
-            src={`${backend_url}${data.images && data?.images[0]}`}
+            src={data.images && data?.images[0]}
             alt=""
             className=" w-full h-[170px] object-contain"
           />

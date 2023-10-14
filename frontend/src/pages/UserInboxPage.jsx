@@ -9,7 +9,7 @@ import { format } from "timeago.js";
 import Header from "../components/Layout/Header";
 import { server } from "../server";
 import styles from "../styles/styles";
-const ENDPOINT = "http://localhost:5000/";
+const ENDPOINT = "http://13.233.147.216:5000/";
 const socketId = socketIO(ENDPOINT, { transports: ["websocket"] });
 
 const UserInboxPage = () => {

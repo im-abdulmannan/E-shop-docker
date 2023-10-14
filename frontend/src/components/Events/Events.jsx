@@ -20,7 +20,7 @@ const Events = () => {
             </div>
 
             <div className="w-full grid">
-              {allEvents.length !== 0 ? (
+              {allEvents && allEvents.length !== 0 ? (
                 <EventCard data={allEvents && allEvents[0]} />
               ) : (
                 <p className="text-[#000000b1] font-[500] flex justify-center items-center mb-7">
